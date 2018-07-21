@@ -27,7 +27,6 @@ class Item(Resource):
             return {"message":"An item with name '{}' already exists.".format(name)}, 400
 
         data = Item.parser.parse_args()
-        print('data = ', data)
         item = ItemModel(name, **data)
 
         try:
